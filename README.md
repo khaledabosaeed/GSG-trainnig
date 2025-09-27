@@ -1,2 +1,3 @@
 # GSG-trainnig
-the technical assignment
+the technical assignment across the course
+
