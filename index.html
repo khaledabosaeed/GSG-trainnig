@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouShop - Electronics Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <span class="logo-text">YOU</span><span class="logo-highlight">SHOP</span>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products...">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <div class="wishlist">
+                        <i class="far fa-heart"></i>
+                        <span>Wishlist</span>
+                    </div>
+                    <div class="cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Cart</span>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Deals</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="filter-section">
+                        <h3>Product Categories</h3>
+                        <ul class="category-list">
+                            <li><a href="#"><i class="fas fa-laptop"></i> Laptops</a></li>
+                            <li><a href="#"><i class="fas fa-mobile-alt"></i> Smartphones</a></li>
+                            <li><a href="#"><i class="fas fa-tablet-alt"></i> Tablets</a></li>
+                            <li><a href="#"><i class="fas fa-headphones"></i> Audio</a></li>
+                            <li><a href="#"><i class="fas fa-camera"></i> Cameras</a></li>
+                            <li><a href="#"><i class="fas fa-gamepad"></i> Gaming</a></li>
+                            <li><a href="#"><i class="fas fa-tv"></i> TVs & Monitors</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Price Range</h3>
+                        <div class="price-filter">
+                            <input type="range" min="0" max="2000" value="1000" class="price-slider">
+                            <div class="price-range">
+                                <span>$0</span>
+                                <span>$2000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Brand</h3>
+                        <ul class="brand-list">
+                            <li><label><input type="checkbox"> Apple</label></li>
+                            <li><label><input type="checkbox"> Samsung</label></li>
+                            <li><label><input type="checkbox"> Dell</label></li>
+                            <li><label><input type="checkbox"> HP</label></li>
+                            <li><label><input type="checkbox"> Sony</label></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Product Grid -->
+                <section class="product-section">
+                    <div class="section-header">
+                        <h2>Featured Products</h2>
+                        <div class="view-options">
+                            <button class="view-btn active"><i class="fas fa-th"></i></button>
+                            <button class="view-btn"><i class="fas fa-list"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="product-grid">
+                        <!-- Product 1 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/200x150/4A90E2/FFFFFF?text=Laptop" alt="Gaming Laptop">
+                                <div class="product-overlay">
+                                    <button class="quick-view">Quick View</button>
+                                </div>
+                                <span class="sale-badge">Sale</span>
+                            </div>
+                            <div class="product-info">
+                                <h3>Gaming Laptop Pro</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(24)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$899.99</span>
+                                    <span class="original-price">$1199.99</span>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/200x150/E94B3C/FFFFFF?text=iPhone" alt="iPhone">
+                                <div class="product-overlay">
+                                    <button class="quick-view">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>iPhone 14 Pro</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(156)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$999.99</span>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/200x150/2ECC71/FFFFFF?text=MacBook" alt="MacBook">
+                                <div class="product-overlay">
+                                    <button class="quick-view">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>MacBook Air M2</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(89)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$1199.99</span>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/200x150/9B59B6/FFFFFF?text=Monitor" alt="Gaming Monitor">
+                                <div class="product-overlay">
+                                    <button class="quick-view">Quick View</button>
+                                </div>
+                                <span class="new-badge">New</span>
+                            </div>
+                            <div class="product-info">
+                                <h3>4K Gaming Monitor</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(67)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$599.99</span>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        <!-- Product 5 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/200x150/F39C12/FFFFFF?text=Tablet" alt="iPad">
+                                <div class="product-overlay">
+                                    <button class="quick-view">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>iPad Pro 12.9"</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(203)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$1099.99</span>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/200x150/1ABC9C/FFFFFF?text=Headphones" alt="Headphones">
+                                <div class="product-overlay">
+                                    <button class="quick-view">Quick View</button>
+                                </div>
+                                <span class="sale-badge">Sale</span>
+                            </div>
+                            <div class="product-info">
+                                <h3>Wireless Headphones</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(145)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$199.99</span>
+                                    <span class="original-price">$299.99</span>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 7 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/200x150/34495E/FFFFFF?text=Camera" alt="Camera">
+                                <div class="product-overlay">
+                                    <button class="quick-view">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>DSLR Camera Pro</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(78)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$1299.99</span>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 8 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/200x150/E67E22/FFFFFF?text=Console" alt="Gaming Console">
+                                <div class="product-overlay">
+                                    <button class="quick-view">Quick View</button>
+                                </div>
+                                <span class="hot-badge">Hot</span>
+                            </div>
+                            <div class="product-info">
+                                <h3>Gaming Console X</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(312)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$499.99</span>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recently Viewed Section -->
+                    <div class="section-header">
+                        <h2>Recently Viewed</h2>
+                    </div>
+
+                    <div class="product-grid recently-viewed">
+                        <!-- Recently Viewed Product 1 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/200x150/4A90E2/FFFFFF?text=Laptop" alt="Gaming Laptop">
+                                <div class="product-overlay">
+                                    <button class="quick-view">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Gaming Laptop Pro</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(24)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$899.99</span>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Recently Viewed Product 2 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/200x150/E94B3C/FFFFFF?text=iPhone" alt="iPhone">
+                                <div class="product-overlay">
+                                    <button class="quick-view">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>iPhone 14 Pro</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(156)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$999.99</span>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Recently Viewed Product 3 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/200x150/34495E/FFFFFF?text=Camera" alt="Camera">
+                                <div class="product-overlay">
+                                    <button class="quick-view">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>DSLR Camera Pro</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(78)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$1299.99</span>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Recently Viewed Product 4 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/200x150/9B59B6/FFFFFF?text=Monitor" alt="Gaming Monitor">
+                                <div class="product-overlay">
+                                    <button class="quick-view">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>4K Gaming Monitor</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(67)</span>
+                                </div>
+                                <div class="price">
+                                    <span class="current-price">$599.99</span>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Order Tracking</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Subscribe to Newsletter</h4>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <img src="https://via.placeholder.com/40x25/333/FFF?text=VISA" alt="Visa">
+                    <img src="https://via.placeholder.com/40x25/333/FFF?text=MC" alt="Mastercard">
+                    <img src="https://via.placeholder.com/40x25/333/FFF?text=AMEX" alt="American Express">
+                    <img src="https://via.placeholder.com/40x25/333/FFF?text=PP" alt="PayPal">
+                </div>
+                <p>&copy; 2024 YouShop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
