@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 228 14% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 228 14% 12%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 228 14% 12%;
+
+  --primary: 0 79% 55%;
+
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 0 0% 95%;
+
+  --secondary-foreground: 228 14% 12%;
+
+  --muted: 210 18% 96%;
+
+  --muted-foreground: 225 10% 45%;
+
+  --accent: 146 100% 45%;
+
+  --accent-foreground: 144 100% 12%;
+
+  --success: 146 100% 45%;
+
+  --success-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 216 16% 90%;
+
+  --input: 216 16% 90%;
+
+  --ring: 0 79% 55%;
+
+  --radius: 0.75rem;
+
+  --sidebar-background: 0 0% 100%;
+
+  --sidebar-foreground: 228 14% 12%;
+
+  --sidebar-primary: 0 79% 55%;
+
+  --sidebar-primary-foreground: 0 0% 100%;
+
+  --sidebar-accent: 0 0% 95%;
+
+  --sidebar-accent-foreground: 228 14% 12%;
+
+  --sidebar-border: 216 16% 90%;
+
+  --sidebar-ring: 0 79% 55%;
+}
+
+.dark {
+  --background: 228 27% 8%;
+
+  --foreground: 210 40% 96%;
+
+  --card: 228 27% 10%;
+
+  --card-foreground: 210 40% 96%;
+
+  --popover: 228 27% 10%;
+
+  --popover-foreground: 210 40% 96%;
+
+  --primary: 0 80% 60%;
+
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 228 30% 16%;
+
+  --secondary-foreground: 210 40% 96%;
+
+  --muted: 228 30% 16%;
+
+  --muted-foreground: 216 12% 68%;
+
+  --accent: 150 80% 45%;
+
+  --accent-foreground: 228 27% 8%;
+
+  --success: 150 80% 45%;
+
+  --success-foreground: 228 27% 8%;
+
+  --destructive: 0 62% 42%;
+
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 228 30% 18%;
+
+  --input: 228 30% 18%;
+
+  --ring: 0 80% 60%;
+
+  --sidebar-background: 228 27% 8%;
+
+  --sidebar-foreground: 210 40% 96%;
+
+  --sidebar-primary: 0 80% 60%;
+
+  --sidebar-primary-foreground: 0 0% 100%;
+
+  --sidebar-accent: 228 30% 16%;
+
+  --sidebar-accent-foreground: 210 40% 96%;
+
+  --sidebar-border: 228 30% 16%;
+
+  --sidebar-ring: 0 80% 60%;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  section {
+    @apply px-4 py-8 sm:px-6 lg:px-8;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: hsl(var(--foreground));
+  }
+}
