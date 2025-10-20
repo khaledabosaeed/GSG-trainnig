@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Search, Heart, ShoppingCart } from 'lucide-react';
 
 interface HeaderProps {
@@ -16,21 +17,24 @@ export const Header: React.FC<HeaderProps> = ({
     <header className="border-b">
       <div className="max-w-7xl mx-auto px-18 py-4">
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold">Exclusive</h1>
+          <Link to="/" className="text-2xl font-bold">Exclusive</Link>
 
           <nav className="hidden md:flex space-x-8">
-            <a href="#" className="text-black hover:underline">
+            <Link to="/" className="text-black hover:underline">
               Home
-            </a>
-            <a href="#" className="text-black hover:text-gray-600">
+            </Link>
+            <Link to="/contact" className="text-black hover:text-gray-600">
               Contact
-            </a>
-            <a href="#" className="text-black hover:text-gray-600">
+            </Link>
+            <Link to="/about" className="text-black hover:text-gray-600">
               About
-            </a>
-            <a href="#" className="text-black hover:text-gray-600">
+            </Link>
+            <Link to="/login" className="text-black hover:text-gray-600">
+              Login
+            </Link>
+            <Link to="/signup" className="text-black hover:text-gray-600">
               Sign Up
-            </a>
+            </Link>
           </nav>
 
           <div className="flex items-center space-x-6">
