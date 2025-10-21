@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Heart, ShoppingCart } from 'lucide-react';
+import { useCart } from '../../entities/cart';
 
 interface HeaderProps {
   onSearchChange?: (query: string) => void;
-  cartItemsCount?: number;
   wishlistItemsCount?: number;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   onSearchChange,
-  cartItemsCount = 0,
   wishlistItemsCount = 0
 }) => {
+  const { itemCount } = useCart();
   return (
     <header className="border-b">
       <div className="max-w-7xl mx-auto px-18 py-4">
@@ -60,14 +60,14 @@ export const Header: React.FC<HeaderProps> = ({
               )}
             </div>
 
-            <div className="relative">
+            <Link to="/cart" className="relative">
               <ShoppingCart size={24} className="cursor-pointer hover:text-red-500" />
-              {cartItemsCount > 0 && (
+              {itemCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                  {cartItemsCount}
+                  {itemCount}
                 </span>
               )}
-            </div>
+            </Link>
           </div>
         </div>
       </div>

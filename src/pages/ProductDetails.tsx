@@ -9,6 +9,8 @@ import { Breadcrumb } from '../shared/ui/Breadcrumb';
 import type { BreadcrumbItem } from '../shared/ui/Breadcrumb';
 import { fetchProductById } from '../entities/proudects';
 import type { Product } from '../entities/proudects';
+import { useCart } from '../entities/cart';
+import { useToast } from '../shared/ui/Toast';
 import {
   ProductImageGallery,
   ProductInfo,
@@ -22,6 +24,8 @@ const ProductDetails = () => {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { addToCart } = useCart();
+  const { showToast } = useToast();
 
   useEffect(() => {
     const loadProduct = async () => {
@@ -48,8 +52,9 @@ const ProductDetails = () => {
   }, [id]);
 
   const handleAddToCart = (quantity: number) => {
-    console.log(`Added ${quantity} items to cart`);
-    // TODO: Implement cart functionality
+    if (!product) return;
+    addToCart(product, quantity);
+    showToast(`${quantity} ${quantity > 1 ? 'items' : 'item'} added to cart!`);
   };
 
   const handleToggleFavorite = () => {
