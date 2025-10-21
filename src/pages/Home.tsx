@@ -140,7 +140,7 @@ const EcommercePage = () => {
             <NavigationButtons />
           </motion.div>
 
-          {loading ? (
+          {loading ? (  
             <div className="text-center py-12">Loading products...</div>
           ) : error ? (
             <div className="text-center py-12 text-red-500">Error: {error}</div>
@@ -149,7 +149,7 @@ const EcommercePage = () => {
           )}
 
           <div className="text-center mt-8">
-            <Button>View All Products</Button>
+            <a href="products" className="bg-[#DB4444] text-white hover:bg-red-600 p-3 rounded-2xl">View All Products</a>
           </div>
         </motion.section>
 

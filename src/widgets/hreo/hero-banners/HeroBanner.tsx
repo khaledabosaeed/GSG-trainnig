@@ -5,14 +5,13 @@ interface HeroBannerProps {
   title: string;
   subtitle: string;
   imageSrc: string;
-  onShopNow?: () => void;
 }
 
 export const HeroBanner: React.FC<HeroBannerProps> = ({
   title,
   subtitle,
   imageSrc,
-  onShopNow
+  
 }) => {
   return (
     <div className="bg-black text-white rounded-lg p-12 flex items-center justify-between">
@@ -33,13 +32,13 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
           <span className="text-lg">{subtitle}</span>
         </div>
         <h2 className="text-5xl text-white font-semibold mb-6 leading-tight">{title}</h2>
-        <button
-          onClick={onShopNow}
-          className="flex items-center text-white border-b-2 border-white pb-1 hover:opacity-80"
+        <a
+          href='/products'
+          className="cursor-pointer flex items-center text-white border-b-2 border-white pb-1 hover:opacity-80"
         >
           Shop Now
           <ChevronRight size={20} className="ml-2" />
-        </button>
+        </a>
       </div>
       <div>
         <img src={imageSrc} alt={title} className="w-96" />

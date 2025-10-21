@@ -5,3 +5,7 @@ export { NavigationButtons } from '../../shared/ui/NavigationButtons';
 export { CountdownTimer } from '../../shared/ui/CountdownTimer';
 export { ScrollToTopButton } from '../../shared/ui/ScrollToTopButton';
 export { PageTransition } from '../../shared/ui/PageTransition';
+export { Rating } from '../../shared/ui/Rating';
+export { QuantitySelector } from '../../shared/ui/QuantitySelector';
+export { Breadcrumb } from '../../shared/ui/Breadcrumb';
+export type { BreadcrumbItem } from '../../shared/ui/Breadcrumb';

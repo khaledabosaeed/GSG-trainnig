@@ -23,6 +23,9 @@ export const Header: React.FC<HeaderProps> = ({
             <Link to="/" className="text-black hover:underline">
               Home
             </Link>
+            <Link to="/products" className="text-black hover:text-gray-600">
+              Products
+            </Link>
             <Link to="/contact" className="text-black hover:text-gray-600">
               Contact
             </Link>
