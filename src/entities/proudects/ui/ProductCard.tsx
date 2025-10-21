@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Heart, Eye, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { Badge } from "../../../shared/ui";
@@ -18,12 +19,27 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   onViewDetails,
 }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/product/${product.id}`);
+  };
+
+  const handleViewDetails = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (onViewDetails) {
+      onViewDetails(product.id);
+    } else {
+      navigate(`/product/${product.id}`);
+    }
+  };
 
   return (
     <motion.div
-      className="bg-[#F5F5F5] rounded-lg p-4 relative group overflow-hidden"
+      className="bg-[#F5F5F5] rounded-lg p-4 relative group overflow-hidden cursor-pointer"
       whileHover={{ y: -5 }}
       transition={{ duration: 0.3 }}
+      onClick={handleCardClick}
     >
       {/* Badges */}
       {product.discount && (
@@ -53,7 +69,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       <div className="absolute top-3 right-3 flex flex-col space-y-2 z-10">
         <motion.button
           title="Add to favorites"
-          onClick={() => onToggleFavorite?.(product.id)}
+          onClick={(e) => {
+            e.stopPropagation();
+            onToggleFavorite?.(product.id);
+          }}
           className="p-2 bg-white rounded-full hover:bg-gray-100"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -62,7 +81,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         </motion.button>
         <motion.button
           title="View details"
-          onClick={() => onViewDetails?.(product.id)}
+          onClick={handleViewDetails}
           className="p-2 bg-white rounded-full hover:bg-gray-100"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -87,7 +106,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
       {/* Add to Cart Button */}
       <motion.button
-        onClick={() => onAddToCart?.(product.id)}
+        onClick={(e) => {
+          e.stopPropagation();
+          onAddToCart?.(product.id);
+        }}
         className="w-full bg-black text-white py-2 rounded"
         initial={{ opacity: 0, y: 10 }}
         whileHover={{ opacity: 1, y: 0 }}
