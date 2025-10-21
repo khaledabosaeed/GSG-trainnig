@@ -17,7 +17,10 @@ export const Footer: React.FC = () => {
                 placeholder="Enter your email"
                 className="bg-transparent border w-20 border-white px-1 py-2 rounded-l flex-1"
               />
-              <button className="bg-white text-black px-2 py-2  rounded-r">
+              <button
+                        title='c'
+
+              className="bg-white text-black px-2 py-2  rounded-r">
                 <Send size={20} />
               </button>
             </div>

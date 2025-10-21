@@ -1,5 +1,6 @@
 import React from 'react';
 import { Headphones } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface ServiceFeature {
   icon: React.ReactNode;
@@ -46,19 +47,63 @@ export const ServiceFeatures: React.FC = () => {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <motion.div
+      className="grid grid-cols-1 md:grid-cols-3 gap-12"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+    >
       {features.map((feature, index) => (
-        <div key={index} className="text-center">
-          <div className="bg-gray-300 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-            <div className="bg-black rounded-full w-14 h-14 flex items-center justify-center">
+        <motion.div
+          key={index}
+          className="text-center group"
+          variants={itemVariants}
+        >
+          <motion.div
+            className="bg-gray-300 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center"
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <motion.div
+              className="bg-black rounded-full w-14 h-14 flex items-center justify-center"
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.5 }}
+            >
               {feature.icon}
-            </div>
-          </div>
-          <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+            </motion.div>
+          </motion.div>
+          <motion.h3
+            className="text-xl font-semibold mb-2"
+            whileHover={{ scale: 1.05 }}
+          >
+            {feature.title}
+          </motion.h3>
           <p className="text-sm text-gray-600">{feature.description}</p>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };

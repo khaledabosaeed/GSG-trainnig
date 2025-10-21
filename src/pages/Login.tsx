@@ -1,28 +1,39 @@
-import { TopBanner } from '../components/layout/TopBanner';
-import { Header } from '../components/layout/Header';
-import { Footer } from '../components/layout/Footer';
+import { motion } from 'framer-motion';
+import { TopBanner } from '../widgets/hreo/hero-banners/TopBanner';
+import { Header } from '../shared/ui/Header';
+import { Footer } from '../shared/ui/Footer';
+import { PageTransition } from '../shared/ui/PageTransition';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
-    <div className="min-h-screen bg-white">
-      <TopBanner
-        message="Welcome to our store - Your one-stop shop for everything!"
-        actionText="Shop Now"
-      />
-      <Header />
+    <PageTransition>
+      <div className="min-h-screen bg-white">
+        <TopBanner
+          message="Welcome to our store - Your one-stop shop for everything!"
+          actionText="Shop Now"
+        />
+        <Header />
 
-       <div className="max-w-7xl mx-auto px-8 py-16">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Left Side - Image */}
-            <img
+        <div className="max-w-7xl mx-auto px-8 py-16">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            {/* Left Side - Image */}
+            <motion.img
               src="/login/login.jpg"
               alt="Shopping Cart"
               className="w-full h-auto max-w-md"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
             />
 
-          {/* Right Side - Sign Up Form */}
-          <div className="max-w-md">
+            {/* Right Side - Login Form */}
+            <motion.div
+              className="max-w-md"
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3 }}
+            >
             <h1 className="text-4xl font-medium mb-3">Log in to Exclusive</h1>
             <p className="text-gray-600 mb-8">Enter your details below</p>
 
@@ -44,34 +55,39 @@ const Login = () => {
                 />
               </div>
 
-              <button
-                type="submit"
-                className="w-full bg-[#DB4444] text-white py-3 rounded hover:bg-[#c23939] transition-colors"
-              >
-                Create Account
-              </button>
+                <motion.button
+                  type="submit"
+                  className="w-full bg-[#DB4444] text-white py-3 rounded hover:bg-[#c23939] transition-colors"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Log In
+                </motion.button>
 
-              <button
-                type="button"
-                className="w-full py-3 border border-gray-300 rounded hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
-              >
-                <img src="https://www.google.com/favicon.ico" alt="Google" className="w-5 h-5" />
-                Sign up with Google
-              </button>
+                <motion.button
+                  type="button"
+                  className="w-full py-3 border border-gray-300 rounded hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <img src="https://www.google.com/favicon.ico" alt="Google" className="w-5 h-5" />
+                  Log in with Google
+                </motion.button>
 
-              <p className="text-center text-gray-600">
-                Already have account?{' '}
-                <Link to="/login" className="ml-2 hover:underline">
-                  Log in
-                </Link>
-              </p>
-            </form>
+                <p className="text-center text-gray-600">
+                  You don't have account?{' '}
+                  <Link to="/signup" className="ml-2 hover:underline">
+                    Sign Up
+                  </Link>
+                </p>
+              </form>
+            </motion.div>
           </div>
         </div>
-      </div>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </PageTransition>
   );
 };
 
