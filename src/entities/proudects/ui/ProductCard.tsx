@@ -4,6 +4,8 @@ import { Heart, Eye, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { Badge } from "../../../shared/ui";
 import type { Product } from "../lib/types";
+import { useCart } from "../../cart";
+import { useToast } from "../../../shared/ui/Toast";
 
 interface ProductCardProps {
   product: Product;
@@ -20,6 +22,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const navigate = useNavigate();
+  const { addToCart } = useCart();
+  const { showToast } = useToast();
 
   const handleCardClick = () => {
     navigate(`/product/${product.id}`);
@@ -108,6 +112,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       <motion.button
         onClick={(e) => {
           e.stopPropagation();
+          addToCart(product);
+          showToast(`${product.name} added to cart!`);
           onAddToCart?.(product.id);
         }}
         className="w-full bg-black text-white py-2 rounded"
