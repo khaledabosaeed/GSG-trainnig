@@ -11,7 +11,7 @@ export const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({
   productName,
 }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const [isZoomed, setIsZoomed] = useState(false);
+  const [, setIsZoomed] = useState(false);
 
   return (
     <motion.div
