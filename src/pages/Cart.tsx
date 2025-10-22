@@ -12,7 +12,7 @@ import { useToast } from '../shared/ui/Toast';
 
 const CartPage = () => {
   const navigate = useNavigate();
-  const { items, itemCount, subtotal, tax, total, updateQuantity, removeFromCart, clearCart } = useCart();
+  const { items,  subtotal, tax, total, updateQuantity, removeFromCart, clearCart } = useCart();
   const { showToast } = useToast();
 
   const handleQuantityChange = (productId: number, newQuantity: number) => {
