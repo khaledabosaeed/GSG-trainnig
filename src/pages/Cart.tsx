@@ -7,7 +7,8 @@ import { Footer } from '../shared/ui/Footer';
 import { PageTransition } from '../shared/ui/PageTransition';
 import { Breadcrumb } from '../shared/ui/Breadcrumb';
 import type { BreadcrumbItem } from '../shared/ui/Breadcrumb';
-import { CartItemComponent, useCart } from '../entities/cart';
+import { CartItemComponent } from '../entities/cart';
+import { useCart } from '../features/cart';
 import { useToast } from '../shared/ui/Toast';
 
 const CartPage = () => {

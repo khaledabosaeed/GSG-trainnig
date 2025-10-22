@@ -9,7 +9,7 @@ import { Breadcrumb } from '../shared/ui/Breadcrumb';
 import type { BreadcrumbItem } from '../shared/ui/Breadcrumb';
 import { fetchProductById } from '../entities/proudects';
 import type { Product } from '../entities/proudects';
-import { useCart } from '../entities/cart';
+import { useCart } from '../features/cart';
 import { useToast } from '../shared/ui/Toast';
 import {
   ProductImageGallery,
