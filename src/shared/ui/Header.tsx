@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Heart, ShoppingCart } from 'lucide-react';
-import { useCart } from '../../entities/cart';
+import { useCart } from '../../features/cart';
 
 interface HeaderProps {
   onSearchChange?: (query: string) => void;

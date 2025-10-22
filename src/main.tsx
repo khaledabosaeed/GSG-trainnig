@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import './global.css'
 import App from './App.tsx'
-import { CartProvider } from './entities/cart'
+import { CartProvider } from './features/cart'
 import { ToastProvider } from './shared/ui/Toast'
 
 createRoot(document.getElementById('root')!).render(

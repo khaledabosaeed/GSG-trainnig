@@ -25,6 +25,3 @@ export { calculateCartTotals } from './lib/types';
 
 // UI exports
 export { CartItemComponent } from './ui/CartItem';
-
-// Context exports
-export { CartProvider, useCart } from './model/CartContext';

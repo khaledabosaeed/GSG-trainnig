@@ -4,7 +4,7 @@ import { Heart, Eye, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { Badge } from "../../../shared/ui";
 import type { Product } from "../lib/types";
-import { useCart } from "../../cart";
+import { useCart } from "../../../features/cart";
 import { useToast } from "../../../shared/ui/Toast";
 
 interface ProductCardProps {
